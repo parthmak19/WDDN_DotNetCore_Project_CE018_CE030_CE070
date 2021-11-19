@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Online_News_System.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<p>
+    <a asp-action="Create">Create News</a>
+</p>
+
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+        <div class="card m-3">
+            <div class="card-header text-center ">
+                <h3>@item.Title</h3>
+                <a asp-action="Edit" class="btn btn-primary m-1" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" class="btn btn-primary m-1" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Delete</a>
+            </div>
+            <div class="card-body">
+                <h5>@item.Description</h5>
+            </div>
+        </div>
+  
+
+    }
+</div>

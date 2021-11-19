@@ -1,0 +1,87 @@
+﻿@model Online_News_System.ViewModels.RegisterViewModel;
+
+@{
+    ViewBag.Title = "Signup";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    @*<div class="row">
+        <div class="col">
+            <center>
+                <img width=100px src="imgs/generaluser.png" class="auto-style1" />
+            </center>
+        </div>*@
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <h4 >Signup</h4>
+                            </center>
+                        </div>
+                    </div>
+                    <hr>
+                    <form method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Username</label>
+                                <div class="form-group">
+                                    <input asp-for="Username" class="form-control" />
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Email ID</label> &nbsp;
+                                <div class="form-group">
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label>Password</label> &nbsp;
+                                <div class="form-group">
+                                    <input asp-for="Password" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label>Confirm Password</label> &nbsp;
+                                <div class="form-group">
+                                    <input asp-for="ConfirmPassword" class="form-control" />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col mx-auto">
+                                <center>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">SignUp</button>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col mx-auto ">
+                                <center>
+                                    Already have an account?&nbsp;<a asp-controller="Account" asp-action="Login">Login</a>
+                                </center>                              
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />

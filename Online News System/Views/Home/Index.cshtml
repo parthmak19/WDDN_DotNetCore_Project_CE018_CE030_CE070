@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Online_News_System.Models.News>
+@inject SignInManager<IdentityUser> signInManager;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"></h1>
+</div>
+
+<style>
+    .card {
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+
+        .card:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+</style>
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+
+    <div class="card m-3">
+        <div class="card-header text-center ">
+            <h3>@item.Title</h3>
+        </div>
+        <div class="card-body"><h6>@item.Description</h6></div>
+        @if (signInManager.IsSignedIn(User))
+        {
+            <a asp-action="Details" asp-controller="News" class="btn btn-primary m-1" asp-route-id="@item.Id">Details</a>
+        }
+
+    </div>
+    }
+</div>
+
